@@ -1,14 +1,17 @@
 from django.urls import path
 from .views import (
     HoraExtraList,
+    HoraExtraEdit,
+    HoraExtraDelete,
+    HoraExtracreate,
 
 )
 
 urlpatterns = [
     path('', HoraExtraList.as_view(), name='list_horaExtra'),
-    #path('editar/<int:pk>', FuncionarioEdit.as_view(), name='update_funcionario'),
-    #path('delete/<int:pk>', FuncionarioDelete.as_view(), name='delete_funcionario'),
-    #path('novo/', FuncionarioNovo.as_view(), name='create_funcionario'),
+    path('editar/<int:pk>', HoraExtraEdit.as_view(), name='update_horaExtra'),
+    path('delete/<int:pk>', HoraExtraDelete.as_view(), name='delete_horaExtra'),
+    path('novo/', HoraExtracreate.as_view(), name='create_horaExtra'),
 
 
 ]

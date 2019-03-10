@@ -4,9 +4,16 @@
     <h2>Banco de Horas</h2>
 <br>
     {% for registro_re in object_list %}
-       {{ registro_re }}
+        <a href="{% url 'update_horaExtra' registro_re.id %}">
+            {{ registro_re }}
+        </a>
+
     {% endfor %}
+    {% if not object_list %}
+        <h3>Nao existe registro de hora extra no bando de dados</h3>
+    {% endif %}
 <br>
 <br>
-<h3>Deseja Criar um novo funcionario Publico?</h3>
+<h3>Deseja Criar um novo  banco de hora ?</h3>
+<a href="{% url 'create_horaExtra' %}" class="btn btn-info">Criar Banco de Horas</a>
 {% endblock %}
