@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>Banco de Horas</h2>
+<br>
+    {% for registro_re in object_list %}
+       {{ registro_re }}
+    {% endfor %}
+<br>
+<br>
+<h3>Deseja Criar um novo funcionario Publico?</h3>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+Edit
+<form method="post">
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button type="submit" class="btn btn-main">Salvar</button>
+</form>
+<br>
+<br>
+<a href="{% url 'create_documento' object.id  %}" class="btn btn-success" >
+    Adcionar documento
+</a>
+{% for documento in object.documento_set.all %}
+    <li>
+        <a href="{{ documento.arquivo.url }} "> {{ documento.descricao }}  </a><br>
+    </li>
+{% endfor %}
+{% endblock %}
