@@ -14,6 +14,22 @@
     {% endfor %}
 <br>
 <br>
-<h3>Deseja Criar um novo funcionario Publico?</h3>
-<a href="{% url 'create_funcionario' %}", class="btn btn-info">Novo Funcionairo Público</a>
+
+    <a href="{% url 'create_funcionario' %}", class="btn btn-info">Novo Funcionairo Público</a><br>
+    <br>
+    <a href="{% url 'relatoriofuncionarios' %}", class="btn btn-info">
+        Relatorio de funcionarios
+    </a>
+
+    <a href="{% url 'relatoriofuncionarios_html' %}", class="btn btn-info">
+        Relatorio de funcionarios html
+    </a>
+     <a href="{% url 'relatoriofuncionarios_html_debug' %}", class="btn btn-danger">
+        Relatorio de funcionarios html debug
+     </a>
+
+
+
+
+
 {% endblock %}
