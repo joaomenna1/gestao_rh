@@ -4,3 +4,5 @@ venv
 *.pyc
 gestao_rh/__pycache__/
 API_REST_Meritocracity.pem
+media
+static
