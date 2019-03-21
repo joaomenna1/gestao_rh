@@ -1,25 +1,76 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block main %}
+    <br>
    <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-         Seja Bem vindo {{ usuario.funcionario.nome }} <br>
-        <a href="{% url 'list_funcionarios'  %}">Gerenciar Funcionario Público</a><br>
-        <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a><br>
-        <a href="{% url 'list_horaExtra' %}">Gerenciar Banco de Horas</a><br>
-        <a href="{% url 'relatoriofuncionarios' %}">Gerar PDF</a><br>
-    </div>
-    <div class="col-sm">
-        <a href="{% url 'logout' %}">Logout</a>
+       <div class="col">
+        <div class="card" style="width: 18rem;">
+          <h2>
+              <i class="fa fa-users" style="font-size:48px;color:black"></i>
+              <a href="{% url 'list_funcionarios' %}" style="color:black">Empregados</a>
+          </h2>
+        </div>
+      </div>
 
-        {% if usuario.funcionario.empresa %}
-            <a href="{% url 'edit_empresa'  usuario.funcionario.empresa.id  %}">Editar Empresa Pública</a>
-        {% else %}
-            <a href="{% url 'create_empresa'  %}">Criar empresa</a>
-        {% endif %}
+       <div class="col">
+        <div class="card" style="width: 18rem;">
+          <h2>
+              <i class="fa fa-clock-o" style="font-size:48px;color:black"></i>
+              <a href="{% url 'list_horaExtra' %}" style="color:black">Banco de horas</a>
+          </h2>
+        </div>
+      </div>
+
+       <div class="col">
+        <div class="card" style="width: 18rem;">
+
+          <h2>
+              <i class="fa fa-book" style="font-size:48px;color:black"></i>
+              <a href="{% url 'list_horaExtra' %}" style="color:black">Documentos</a>
+          </h2>
+        </div>
+      </div>
+   </div>
+
+    <br>
+   <div class="row">
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Funcionario</h5>
+            <ul>
+                <li>N. funcionarios: {{ total_funcionarios }}</li>
+                <li>N. func. de ferias: {{ total_funcionarios_ferias }}</li>
+                <li>N. func. de doc pendente: {{ total_funcionarios_doc_pendente }}</li>
+            </ul>
+          </div>
+        </div>
     </div>
+
+    <div class="col">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header">Banco de horas</div>
+          <div class="card-body">
+              <ul>
+                  <li>Horas pendentes: {{ total_hora_extra_pendente }}</li>
+                  <li>Horas utilizadas: {{ total_hora_extra_utilizadas }}</li>
+              </ul>
+          </div>
+        </div>
+    </div>
+       <div class="col">
+    <div class="card border-danger mb-3" style="max-width: 18rem;">
+      <div class="card-header">Documentos</div>
+      <div class="card-body text-danger">
+          <ul>
+              <li>Tot. func. doc ok: {{ total_funcionarios_doc_ok }}</li>
+              <li>Tot. func. doc faltantes: {{ total_funcionarios_doc_pendente }}</li>
+              <li>Tot func. faltant. RG: {{ total_funcionarios_rg }}</li>
+          </ul>
+      </div>
+    </div>
+    </div>
+
   </div>
 {% endblock %}
