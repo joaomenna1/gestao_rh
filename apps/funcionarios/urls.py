@@ -20,5 +20,4 @@ urlpatterns = [
     path('relatoriofuncionarios_html', Pdf.as_view(), name='relatoriofuncionarios_html'),
     path('relatoriofuncionarios_html_debug', PdfDebug.as_view(), name='relatoriofuncionarios_html_debug'),
 
-
 ]

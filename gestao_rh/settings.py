@@ -6,7 +6,9 @@ SECRET_KEY = ')340&61*&z%+(9rz(6byk#gn$yk4fj1ik&_uz@u3qx)1)g&vs4'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.17.19.34']
+ALLOWED_HOSTS = [
+
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,6 +24,8 @@ INSTALLED_APPS = [
     'apps.registro_hora_extra',
     'apps.core',
     'bootstrapform',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
