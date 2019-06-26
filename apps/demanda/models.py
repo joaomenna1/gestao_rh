@@ -9,12 +9,12 @@ class Demanda(models.Model):
     endereco = models.CharField(max_length=100)
     atendimento = models.CharField(max_length=100)
     telefone = models.CharField(max_length=9)
-    assunto = models.CharField(max_length=100)
+    assunto = models.CharField(max_length=40)
     data = models.CharField(max_length=10)
     profissao = models.CharField(max_length=100)
     encaminhamento = models.CharField(max_length=100)
     responsavel = models.CharField(max_length=100)
-    situacao = models.CharField(max_length=100)
+    situacao = models.CharField(max_length=10)
 
 
 
